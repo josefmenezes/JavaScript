@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1 id = "msg"> Hello Student <br> Check Your results</h1>
+
+<button onclick = EnterResult()>Result</button>
+<button onclick = "ChangeGrade()">Grade
+</button>
+<script>
+   function EnterResult() {
+    // Just changed the capital F here
+    let marks = parseFloat(prompt("Enter your marks:")); 
+
+    if (marks >= 90) {
+        document.getElementById("msg").innerHTML = "Your result is A";
+    } 
+    else if (marks >= 80) {
+        document.getElementById("msg").innerHTML = "Your result is B";
+    } 
+    else if (marks >= 60) {
+        document.getElementById("msg").innerHTML = "Your result is C";
+    } 
+    else if (marks >= 35) {
+        document.getElementById("msg").innerHTML = "Your result is D";
+    } 
+    else {
+        document.getElementById("msg").innerHTML = "Your result is F";
+    }
+}
+    // function addnum() {
+    //     let num1 = parseFloat(prompt("Enter value 1:"));
+    //     let num2 = parseFloat(prompt("Enter value 2:"));
+    //     let sum = num1 + num2;
+    //     alert("Sum: " + sum);
+    // }
+    
+</script>
+
+</body>
+</html>

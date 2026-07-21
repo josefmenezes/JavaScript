@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+</head>
+<body>
+    <h1 id="msg">Hello, Students!    </h1>
+    <button onclick="changeText()">Change Text</button>
+    <script>
+        function changeText() {
+            document.getElementById("msg").innerText = "Learning JavaScript";
+        }
+    </script>
+    
+</body>
+</html>
