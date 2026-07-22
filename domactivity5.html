@@ -7,9 +7,19 @@
 </head>
 <body>
     <Button onclick=CheckTemp()>Check Temperature </Button>
+    <p id="msg"></p>
     <script>
 
+    function CheckTemp() {
+        // Fixed parseFloat capitalization
+        let Temp = parseFloat(prompt("Enter Current Temperature"));
         
-    </script>
+        if (Temp >= 30) {
+            document.getElementById("msg").innerHTML = "It's a hot day";
+        } else {
+            document.getElementById("msg").innerHTML = "It's a cool day";
+        }
+    }
+</script>
 </body>
 </html>
