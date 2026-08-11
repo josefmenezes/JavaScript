@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 02 - JavaScript Operators</title>
+</head>
+<body>
+    <h2>Experiment 02: JavaScript Operators</h2>
+
+    <script>
+    
+        console.log("=== Task 1: Arithmetic & Assignment Operators ===");
+        let principal = 10000;
+        let rate = 5; 
+        let time = 2; 
+
+      
+        let simpleInterest = (principal * rate * time) / 100;
+        
+    
+        let compoundInterest = principal * ((1 + rate / 100) ** time) - principal;
+
+        console.log(`Principal: $${principal}`);
+        console.log(`Simple Interest: $${simpleInterest}`);
+        console.log(`Compound Interest: $${compoundInterest.toFixed(2)}`);
+
+        // Using Assignment Operators
+        let totalAmount = principal;
+        totalAmount += simpleInterest;
+        console.log(`Total Amount (Principal + SI): $${totalAmount}`);
+
+        console.log("\n=== Task 2: Comparison Operators ===");
+        let val1 = 25;
+        let val2 = "25";
+
+        console.log(`val1 = ${val1} (Type: ${typeof val1})`);
+        console.log(`val2 = "${val2}" (Type: ${typeof val2})`);
+        
+        console.log(`Loose Equality  (val1 == val2):  `, val1 == val2); 
+
+        // Strict equality (No type coercion)
+        console.log(`Strict Equality (val1 === val2): `, val1 === val2);
+        console.log(`Strict Inequality (val1 !== val2):`, val1 !== val2); 
+
+        console.log("\n=== Task 3: Logical Operators ===");
+    
+        let sideA = 7, sideB = 10, sideC = 5;
+        let isValidTriangle = (sideA + sideB > sideC) && 
+                            (sideA + sideC > sideB) && 
+                            (sideB + sideC > sideA);
+                            
+        console.log(`Sides [${sideA}, ${sideB}, ${sideC}] form a valid triangle:`, isValidTriangle);
+
+        let year = 2026;
+        let isLeapYear = (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+        console.log(`Is the year ${year} a leap year?`, isLeapYear);
+
+        console.log("\n=== Task 4: Ternary Operator ===");
+        
+        let number = -15;
+        let parity = (number % 2 === 0) ? "Even" : "Odd";
+        let sign = (number > 0) ? "Positive" : (number < 0) ? "Negative" : "Zero";
+
+        console.log(`The number ${number} is ${sign} and ${parity}.`);
+    </script>
+</body>
+</html>

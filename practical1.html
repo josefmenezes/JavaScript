@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 01 - Environment, Variables, & Data Types</title>
+</head>
+<body>
+    <h2>Experiment 01: JavaScript Environment, Variables, & Data Types</h2>
+    <div id="output-box"></div>
+
+    <script>
+        console.log("=== Task 1: Variable Declarations & Scope ===");
+
+        var globalVar = "I am a var (Function-scoped)";
+        let blockLet = "I am a let (Block-scoped)";
+        const CONST_VAL = 3.14159;
+
+        {
+            var insideBlockVar = "Var escapes block!";
+            let insideBlockLet = "Let is trapped in block!";
+            console.log("Inside Block -> let:", insideBlockLet);
+        }
+
+        console.log("Outside Block -> var:", insideBlockVar);
+        globalVar = "var re-assigned";
+        blockLet = "let re-assigned";
+
+        console.log("\n=== Task 2: Primitive & Reference Data Types ===");
+
+        let num = 100;                               
+        let str = "Hello JavaScript";                
+        let isActive = true;                         
+        let unassigned;                              
+        let emptyVal = null;                         
+        let bigIntNum = 9007199254740991n;           
+        let uniqueSym = Symbol("id");               
+
+        console.log("num:", typeof num);
+        console.log("str:", typeof str);
+        console.log("isActive:", typeof isActive);
+        console.log("unassigned:", typeof unassigned);
+        console.log("emptyVal:", typeof emptyVal);   
+        console.log("bigIntNum:", typeof bigIntNum);
+        console.log("uniqueSym:", typeof uniqueSym);
+
+        let studentObj = { name: "Josef", age: 25, course: "Computer Science" }; // Object
+        let techStack = ["JavaScript", "HTML", "CSS", "SQL"];                    // Array
+        console.log("studentObj:", typeof studentObj);
+        console.log("techStack:", typeof techStack, "| Is Array:", Array.isArray(techStack));
+        console.log("\n=== Task 3: I/O Operations ===");
+
+        let userName = prompt("Enter your name:", "Student");
+        
+        if (userName !== null && userName.trim() !== "") {
+            let greeting = `Hello, ${userName}! Welcome to JavaScript Practical Lab.`;
+            
+            console.log(greeting);
+
+            alert(greeting);
+            document.getElementById("output-box").innerHTML = 
+                `<p style="color: green; font-weight: bold;">${greeting}</p>`;
+        } else {
+            console.log("User cancelled or entered empty input.");
+        }
+    </script>
+</body>
+</html>
